@@ -89,8 +89,3 @@ nav a:hover {
 nav a.active {
   color: salmon
 }
-
-li a {
-  color: #333;
-  text-decoration: none;
-}

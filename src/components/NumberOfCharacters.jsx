@@ -1,13 +1,9 @@
-import React from 'react';
-
-function NumberOfCharacters({ characters }) {
+export function NumberOfCharacters({ characters =[]}) {
   const count = characters.length;
 
-  if (count === 0) {
-    return <p>There is no character</p>;
-  }
-
-  return <p>There {count === 1 ? 'is' : 'are'} {count} {count === 1 ? 'character' : 'characters'}</p>;
+  return (
+    <div>
+      {count > 0 ? `There is ${count} character${count > 1 ? 's' : ''}` : 'There is no character'}
+    </div>
+  );
 }
-
-export default NumberOfCharacters;

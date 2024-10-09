@@ -1,20 +1,18 @@
-import React, {useEffect} from 'react';
+// src/pages/CharacterDetailPage.jsx
 
-import { useLoaderData } from 'react-router';
-import CharacterDetail from '../components/CharacterDetail';
+import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import CharacterDetail from '../components/CharacterDetail'; // Assurez-vous d'importer ce composant
 
-const CharactersDetailPage = () => {
+const CharacterDetailPage = () => {
     const character = useLoaderData();
 
-    useEffect(() => {
-        document.title = `${character.name} | Marvel App`;       
-    }, [character]);
-
     return (
-        <>
+        <div>
+            <h2>{character.name}</h2>
             <CharacterDetail character={character} />
-        </>
+        </div>
     );
 };
 
-export default CharactersDetailPage;
+export default CharacterDetailPage;
