@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1730740894172" clover="3.2.0">
-  <project timestamp="1730740894172" name="All files">
-    <metrics statements="41" coveredstatements="9" conditionals="19" coveredconditionals="5" methods="19" coveredmethods="4" elements="79" coveredelements="18" complexity="0" loc="41" ncloc="41" packages="4" files="14" classes="14"/>
+<coverage generated="1730821826491" clover="3.2.0">
+  <project timestamp="1730821826491" name="All files">
+    <metrics statements="41" coveredstatements="12" conditionals="19" coveredconditionals="5" methods="19" coveredmethods="6" elements="79" coveredelements="23" complexity="0" loc="41" ncloc="41" packages="4" files="14" classes="14"/>
     <package name="src">
       <metrics statements="10" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <file name="App.jsx" path="C:\Users\qfillion\marvel-app5\src\App.jsx">
@@ -65,7 +65,7 @@
       </file>
     </package>
     <package name="src.pages">
-      <metrics statements="15" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="8" coveredmethods="0"/>
+      <metrics statements="15" coveredstatements="3" conditionals="3" coveredconditionals="0" methods="8" coveredmethods="2"/>
       <file name="AboutPage.jsx" path="C:\Users\qfillion\marvel-app5\src\pages\AboutPage.jsx">
         <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="3" count="0" type="stmt"/>
@@ -84,10 +84,10 @@
         <line num="10" count="0" type="stmt"/>
       </file>
       <file name="CharactersPage.jsx" path="C:\Users\qfillion\marvel-app5\src\pages\CharactersPage.jsx">
-        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
       </file>
       <file name="ContactPage.jsx" path="C:\Users\qfillion\marvel-app5\src\pages\ContactPage.jsx">
         <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
