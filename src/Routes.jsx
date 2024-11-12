@@ -15,7 +15,7 @@ const routes = [
             { path: "/about", element: <AboutPage /> },
             { path: "/contact", element: <ContactPage /> },
             {
-                path: "/character/:id", // Route pour afficher les détails d'un personnage
+                path: "/characters/:id", // Route pour afficher les détails d'un personnage
                 element: <CharacterDetailPage />,
                 loader: async ({ params }) => {
                     const character = getCharacterById(params.id); // Appel direct à getCharacterById
