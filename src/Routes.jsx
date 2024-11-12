@@ -12,7 +12,7 @@ const routes = [
         element: <Layout />,
         children: [
             { path: "/", element: <CharactersPage />, loader: getCharacters }, // Vous pouvez maintenant utiliser getCharacters directement
-            { path: "/about", element: <AboutPage /> },
+            { path: "/About", element: <AboutPage /> },
             { path: "/contact", element: <ContactPage /> },
             {
                 path: "/characters/:id", // Route pour afficher les détails d'un personnage
