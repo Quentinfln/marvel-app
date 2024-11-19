@@ -1,10 +1,11 @@
 import React from 'react';
-import {CharactersList} from '../components/CharactersList';
-import {NumberOfCharacters} from '../components/NumberOfCharacters';
-import { useLoaderData } from "react-router";
+import { CharactersList } from "../components/CharactersList";
+import { NumberOfCharacters } from "../components/NumberOfCharacters";
+import { useLoaderData } from 'react-router';
 
 const CharactersPage = () => {
-    document.title = 'Marvel App';
+    // change the title of the page
+    document.title = "Marvel App";
 
     const characters = useLoaderData();
 
@@ -18,5 +19,4 @@ const CharactersPage = () => {
     );
 };
 
-export default CharactersPage
-
+export default CharactersPage;

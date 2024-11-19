@@ -1,17 +1,16 @@
 import '@testing-library/jest-dom';
-import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import AboutPage from './AboutPage';
 
 describe('AboutPage', () => {
-    it('should render the AboutPage component', () => {
-        const { getByText } = render(<AboutPage />);
-        expect(getByText('About Us')).toBeInTheDocument();
-        expect(getByText('We are a team of Marvel fans who love to create awesome apps !')).toBeInTheDocument();
-    });
-
-    it('should set the document title to "About | Marvel App"', () => {
+    test('sets the document title correctly', () => {
         render(<AboutPage />);
         expect(document.title).toBe('About | Marvel App');
+    
+        const headingElement = screen.getByRole('heading', { level: 2, name: 'About Us' });
+        expect(headingElement).toBeInTheDocument();
+    
+        const paragraphElement = screen.getByText('We are a team of Marvel fans who love to create awesome apps!');
+        expect(paragraphElement).toBeInTheDocument();
     });
 });

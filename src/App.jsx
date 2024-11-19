@@ -1,4 +1,5 @@
 import './App.css'
+
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import routes from './Routes'
 
@@ -10,4 +11,5 @@ function App() {
     <RouterProvider router={router} />
   )
 }
+
 export default App

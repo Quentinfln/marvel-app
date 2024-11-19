@@ -1,23 +1,18 @@
 import '@testing-library/jest-dom';
-import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import ContactPage from './ContactPage';
 
 describe('ContactPage', () => {
-    it('should render the ContactPage component', () => {
-        const { getByText } = render(<ContactPage />);
-        expect(getByText('Contact Us')).toBeInTheDocument();
-    });
-
-    it('should set the document title to "Contact | Marvel App"', () => {
+    test('sets the document title correctly', () => {
         render(<ContactPage />);
         expect(document.title).toBe('Contact | Marvel App');
-    });
-
-    it('should contain a mailto link with the correct email address', () => {
-        const { getByText } = render(<ContactPage />);
-        const linkElement = getByText('marvelApp@gmail.com');
-        expect(linkElement).toBeInTheDocument();
-        expect(linkElement.closest('a')).toHaveAttribute('href', 'mailto:marvelApp@gmail.com');
+    
+        const headingElement = screen.getByRole('heading', { level: 2, name: 'Contact Us' });
+        expect(headingElement).toBeInTheDocument();
+    
+        const paragraphElement = screen.getByText(/Feel free to contact us at/i);
+        expect(paragraphElement).toBeInTheDocument();
+        const linkElement = screen.getByRole('link', { name: 'marvelApp@gmail.com' });
+        expect(linkElement).toHaveAttribute('href', 'mailto:marvelApp@gmail.com');
     });
 });
