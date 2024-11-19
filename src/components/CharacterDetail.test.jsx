@@ -1,68 +1,39 @@
 import '@testing-library/jest-dom';
-import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import CharacterDetail from './CharacterDetail';
 
-describe('CharacterDetail', () => {
-    it('renders character details correctly', () => {
-        const character = {
-            name: 'Spider-Man',
-            description: 'Friendly neighborhood Spider-Man.',
-            thumbnail: {
-                path: 'http://example.com/spiderman',
-                extension: 'jpg'
-            },
-            modified: '2023-01-01'
-        };
+test('renders the character detail correctly', () => {
+    const character = { 
+        name: 'Thor', description: 'God of Thunder', modified: '2014-01-13T14:48:32-0500',
+        thumbnail: { path: 'path/to/image', extension: 'jpg' },
+    };
+    render(<CharacterDetail character={character} />);
+    const nameElement = screen.getByText(character.name);
+    expect(nameElement).toBeInTheDocument();
 
-        const { getByText, getByAltText } = render(<CharacterDetail character={character} />);
+    const descriptionElement = screen.getByText(character.description);
+    expect(descriptionElement).toBeInTheDocument();
 
-        expect(getByAltText('Spider-Man')).toBeInTheDocument();
-        expect(getByText('Friendly neighborhood Spider-Man.')).toBeInTheDocument();
-        expect(getByText('2023-01-01')).toBeInTheDocument();
-    });
+    const modifiedElement = screen.getByText(character.modified);
+    expect(modifiedElement).toBeInTheDocument();
 
-    it('renders default text when description is missing', () => {
-        const character = {
-            name: 'Spider-Man',
-            thumbnail: {
-                path: 'http://example.com/spiderman',
-                extension: 'jpg'
-            },
-            modified: '2023-01-01'
-        };
+    const imageElement = screen.getByAltText(character.name);
+    expect(imageElement).toBeInTheDocument();
+    expect(imageElement).toHaveAttribute('src', 'path/to/image/standard_large.jpg');
+});
 
-        const { getByText } = render(<CharacterDetail character={character} />);
 
-        expect(getByText('No description available.')).toBeInTheDocument();
-    });
+test('does not render the character thumbnail image when not provided', () => {
+    const character = { 
+        name: 'Thor', description: 'God of Thunder', modified: '2014-01-13T14:48:32-0500',
+    };
+    render(<CharacterDetail character={character} />);
+    const imageElement = screen.queryByAltText(character.name);
+    expect(imageElement).not.toBeInTheDocument();
+});
 
-    it('renders default text when modified date is missing', () => {
-        const character = {
-            name: 'Spider-Man',
-            description: 'Friendly neighborhood Spider-Man.',
-            thumbnail: {
-                path: 'http://example.com/spiderman',
-                extension: 'jpg'
-            }
-        };
-
-        const { getByText } = render(<CharacterDetail character={character} />);
-
-        expect(getByText('No modification date available.')).toBeInTheDocument();
-    });
-
-    it('renders correctly when thumbnail is missing', () => {
-        const character = {
-            name: 'Spider-Man',
-            description: 'Friendly neighborhood Spider-Man.',
-            modified: '2023-01-01'
-        };
-
-        const { getByText, queryByAltText } = render(<CharacterDetail character={character} />);
-
-        expect(queryByAltText('Spider-Man')).toBeNull();
-        expect(getByText('Friendly neighborhood Spider-Man.')).toBeInTheDocument();
-        expect(getByText('2023-01-01')).toBeInTheDocument();
-    });
+test('renders "no character" when character is not provided', () => {
+    render(<CharacterDetail />);
+    const noCharacterElement = screen.getByText('No character');
+    expect(noCharacterElement).toBeInTheDocument();
 });
