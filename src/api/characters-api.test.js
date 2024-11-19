@@ -1,58 +1,30 @@
 import { getCharacters, getCharacterById, fetchCharacters } from './characters-api';
 import characters from '../data/characters.json';
 
-jest.mock('../data/characters.json', () => [
-    { id: 1, name: 'Iron Man', modified: '2023-01-01' },
-    { id: 2, name: 'Thor', modified: '2023-01-02' },
-    { id: 3, name: 'Hulk', modified: '2023-01-03' }
-]);
-
 describe('getCharacters', () => {
-    it('should return characters sorted by name in ascending order', () => {
-        const result = getCharacters('name', 'asc');
-        expect(result).toEqual([
-            { id: 3, name: 'Hulk', modified: '2023-01-03' },
-            { id: 1, name: 'Iron Man', modified: '2023-01-01' },
-            { id: 2, name: 'Thor', modified: '2023-01-02' }
-        ]);
-    });
+    const sortTests = [
+        { field: 'name', order: 'asc', compareFn: (a, b) => a.name.localeCompare(b.name) },
+        { field: 'name', order: 'desc', compareFn: (a, b) => b.name.localeCompare(a.name) },
+        { field: 'modified', order: 'asc', compareFn: (a, b) => new Date(a.modified) - new Date(b.modified) },
+        { field: 'modified', order: 'desc', compareFn: (a, b) => new Date(b.modified) - new Date(a.modified) },
+    ];
 
-    it('should return characters sorted by name in descending order', () => {
-        const result = getCharacters('name', 'desc');
-        expect(result).toEqual([
-            { id: 2, name: 'Thor', modified: '2023-01-02' },
-            { id: 1, name: 'Iron Man', modified: '2023-01-01' },
-            { id: 3, name: 'Hulk', modified: '2023-01-03' }
-        ]);
-    });
-
-    it('should return characters sorted by modified date in ascending order', () => {
-        const result = getCharacters('modified', 'asc');
-        expect(result).toEqual([
-            { id: 1, name: 'Iron Man', modified: '2023-01-01' },
-            { id: 2, name: 'Thor', modified: '2023-01-02' },
-            { id: 3, name: 'Hulk', modified: '2023-01-03' }
-        ]);
-    });
-
-    it('should return characters sorted by modified date in descending order', () => {
-        const result = getCharacters('modified', 'desc');
-        expect(result).toEqual([
-            { id: 3, name: 'Hulk', modified: '2023-01-03' },
-            { id: 2, name: 'Thor', modified: '2023-01-02' },
-            { id: 1, name: 'Iron Man', modified: '2023-01-01' }
-        ]);
+    sortTests.forEach(({ field, order, compareFn }) => {
+        it(`should return characters sorted by ${field} in ${order} order`, () => {
+            const sortedCharacters = getCharacters(field, order);
+            expect(sortedCharacters).toEqual([...characters].sort(compareFn));
+        });
     });
 });
 
 describe('getCharacterById', () => {
     it('should return the character with the given id', () => {
-        const result = getCharacterById(1);
-        expect(result).toEqual({ id: 1, name: 'Iron Man', modified: '2023-01-01' });
+        const character = characters[0];
+        expect(getCharacterById(character.id)).toEqual(character);
     });
 
     it('should throw an error if the character with the given id is not found', () => {
-        expect(() => getCharacterById(4)).toThrow('Character with id 4 not found');
+        expect(() => getCharacterById(999)).toThrow('Character with id 999 not found');
     });
 });
 
@@ -65,27 +37,18 @@ describe('fetchCharacters', () => {
         );
     });
 
-    it('should fetch characters sorted by name in ascending order', async () => {
-        const result = await fetchCharacters('name', 'asc');
-        expect(result).toEqual(characters);
-        expect(global.fetch).toHaveBeenCalledWith('/api/characters?sort=name&order=asc');
-    });
+    const fetchTests = [
+        { field: 'name', order: 'asc' },
+        { field: 'name', order: 'desc' },
+        { field: 'modified', order: 'asc' },
+        { field: 'modified', order: 'desc' },
+    ];
 
-    it('should fetch characters sorted by name in descending order', async () => {
-        const result = await fetchCharacters('name', 'desc');
-        expect(result).toEqual(characters);
-        expect(global.fetch).toHaveBeenCalledWith('/api/characters?sort=name&order=desc');
-    });
-
-    it('should fetch characters sorted by modified date in ascending order', async () => {
-        const result = await fetchCharacters('modified', 'asc');
-        expect(result).toEqual(characters);
-        expect(global.fetch).toHaveBeenCalledWith('/api/characters?sort=modified&order=asc');
-    });
-
-    it('should fetch characters sorted by modified date in descending order', async () => {
-        const result = await fetchCharacters('modified', 'desc');
-        expect(result).toEqual(characters);
-        expect(global.fetch).toHaveBeenCalledWith('/api/characters?sort=modified&order=desc');
+    fetchTests.forEach(({ field, order }) => {
+        it(`should fetch characters sorted by ${field} in ${order} order`, async () => {
+            const data = await fetchCharacters(field, order);
+            expect(data).toEqual(characters);
+            expect(global.fetch).toHaveBeenCalledWith(`/api/characters?sort=${field}&order=${order}`);
+        });
     });
 });
