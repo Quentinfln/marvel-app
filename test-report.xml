@@ -1,30 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
   <file path="C:\Users\qfillion\marvel-app5\src\components\chart-utils.test.js">
-    <testCase name="prepareData should return an empty array when no data is provided" duration="6"/>
-    <testCase name="prepareData should return the correct transformed data when all values are provided" duration="0"/>
-    <testCase name="prepareData should filter out elements with undefined values" duration="0"/>
+    <testCase name="prepareData should return an empty array when no data is provided" duration="9"/>
+    <testCase name="prepareData should return the correct transformed data when all values are provided" duration="1"/>
+    <testCase name="prepareData should filter out elements with undefined values" duration="1"/>
     <testCase name="prepareData should handle partial data correctly" duration="1"/>
   </file>
   <file path="C:\Users\qfillion\marvel-app5\src\api\characters-api.test.js">
-    <testCase name="getCharacters should return characters sorted by name in asc order" duration="14"/>
+    <testCase name="getCharacters should return characters sorted by name in asc order" duration="20"/>
     <testCase name="getCharacters should return characters sorted by name in desc order" duration="0"/>
     <testCase name="getCharacters should return characters sorted by modified in asc order" duration="0"/>
     <testCase name="getCharacters should return characters sorted by modified in desc order" duration="1"/>
-    <testCase name="getCharacterById should return the character with the given id" duration="0"/>
-    <testCase name="getCharacterById should throw an error if the character with the given id is not found" duration="7"/>
-    <testCase name="fetchCharacters should fetch characters sorted by name in asc order" duration="1"/>
+    <testCase name="getCharacterById should return the character with the given id" duration="1"/>
+    <testCase name="getCharacterById should throw an error if the character with the given id is not found" duration="31"/>
+    <testCase name="fetchCharacters should fetch characters sorted by name in asc order" duration="3"/>
     <testCase name="fetchCharacters should fetch characters sorted by name in desc order" duration="1"/>
-    <testCase name="fetchCharacters should fetch characters sorted by modified in asc order" duration="0"/>
-    <testCase name="fetchCharacters should fetch characters sorted by modified in desc order" duration="1"/>
+    <testCase name="fetchCharacters should fetch characters sorted by modified in asc order" duration="1"/>
+    <testCase name="fetchCharacters should fetch characters sorted by modified in desc order" duration="0"/>
+  </file>
+  <file path="C:\Users\qfillion\marvel-app5\src\components\NumberOfCharacters.test.jsx">
+    <testCase name="renders &quot;There is no character&quot; when characters array is empty" duration="35"/>
+    <testCase name="renders the correct number of characters when characters array is not empty" duration="5"/>
+    <testCase name="renders &quot;There is no character&quot; when no characters are provided" duration="8"/>
+  </file>
+  <file path="C:\Users\qfillion\marvel-app5\src\components\CharacterDetail.test.jsx">
+    <testCase name="renders the character detail correctly" duration="47"/>
+    <testCase name="does not render the character thumbnail image when not provided" duration="3"/>
+    <testCase name="renders &quot;no character&quot; when character is not provided" duration="2"/>
+  </file>
+  <file path="C:\Users\qfillion\marvel-app5\src\pages\AboutPage.test.jsx">
+    <testCase name="AboutPage sets the document title correctly" duration="78"/>
+  </file>
+  <file path="C:\Users\qfillion\marvel-app5\src\pages\ContactPage.test.jsx">
+    <testCase name="ContactPage sets the document title correctly" duration="91"/>
+  </file>
+  <file path="C:\Users\qfillion\marvel-app5\src\components\CharactersList.test.jsx">
+    <testCase name="renders an empty list when no characters are provided" duration="74"/>
+    <testCase name="renders an empty list when characters is empty" duration="10"/>
+    <testCase name="renders the correct number of list items when characters are provided" duration="18"/>
   </file>
   <file path="C:\Users\qfillion\marvel-app5\src\components\D3PieChart.test.jsx">
-    <testCase name="D3PieChart renders D3PieChart with label and value" duration="48"/>
+    <testCase name="D3PieChart renders D3PieChart with label and value" duration="55"/>
+  </file>
+  <file path="C:\Users\qfillion\marvel-app5\src\pages\CharactersPage.test.jsx">
+    <testCase name="CharactersPage render CharactersPage component" duration="74"/>
   </file>
   <file path="C:\Users\qfillion\marvel-app5\src\components\RechartsPieChart.test.jsx">
-    <testCase name="RechartsPieChart renders RechartsPieChart" duration="57"/>
+    <testCase name="RechartsPieChart renders RechartsPieChart" duration="62"/>
   </file>
   <file path="C:\Users\qfillion\marvel-app5\src\pages\CharacterDetailPage.test.jsx">
-    <testCase name="CharacterDetailPage render CharacterDetailPage component" duration="70"/>
+    <testCase name="CharacterDetailPage render CharacterDetailPage component" duration="76"/>
   </file>
 </testExecutions>
