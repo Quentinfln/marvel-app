@@ -12,7 +12,7 @@ describe('CharacterDetailPage', () => {
     const character = {
         name: 'Thor',
         description: 'God of Thunder',
-        modified: '2023-10-01',
+        modified: 'Mar 11, 2020',
         thumbnail: { path: 'path/to/image', extension: 'jpg' },
         capacities: {
             force: 5,

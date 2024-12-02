@@ -4,7 +4,7 @@ import CharacterDetail from './CharacterDetail';
 
 test('renders the character detail correctly', () => {
     const character = { 
-        name: 'Thor', description: 'God of Thunder', modified: '2014-01-13T14:48:32-0500',
+        name: 'Thor', description: 'God of Thunder', modified: 'Mar 11, 2020',
         thumbnail: { path: 'path/to/image', extension: 'jpg' },
     };
     render(<CharacterDetail character={character} />);
@@ -25,7 +25,7 @@ test('renders the character detail correctly', () => {
 
 test('does not render the character thumbnail image when not provided', () => {
     const character = { 
-        name: 'Thor', description: 'God of Thunder', modified: '2014-01-13T14:48:32-0500',
+        name: 'Thor', description: 'God of Thunder', modified: 'Mar 11, 2020',
     };
     render(<CharacterDetail character={character} />);
     const imageElement = screen.queryByAltText(character.name);
