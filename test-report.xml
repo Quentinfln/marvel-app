@@ -1,31 +1,255 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
   <file path="C:\Users\qfillion\marvel-app5\src\api\characters-api.test.js">
-    <testCase name="getCharacters should return characters sorted by name in asc order" duration="15"/>
-    <testCase name="getCharacters should return characters sorted by name in desc order" duration="1"/>
-    <testCase name="getCharacters should return characters sorted by modified in asc order" duration="1"/>
-    <testCase name="getCharacters should return characters sorted by modified in desc order" duration="0"/>
-    <testCase name="getCharacterById should return the character with the given id" duration="1"/>
-    <testCase name="getCharacterById should throw an error if the character with the given id is not found" duration="8"/>
-    <testCase name="fetchCharacters should fetch characters sorted by name in asc order" duration="4"/>
+    <testCase name="getCharacters should return characters sorted by name in asc order" duration="13"/>
+    <testCase name="getCharacters should return characters sorted by name in desc order" duration="0"/>
+    <testCase name="getCharacters should return characters sorted by modified in asc order" duration="0"/>
+    <testCase name="getCharacters should return characters sorted by modified in desc order" duration="1"/>
+    <testCase name="getCharacterById should return the character with the given id" duration="0"/>
+    <testCase name="getCharacterById should throw an error if the character with the given id is not found" duration="6"/>
+    <testCase name="fetchCharacters should fetch characters sorted by name in asc order" duration="2"/>
     <testCase name="fetchCharacters should fetch characters sorted by name in desc order" duration="0"/>
     <testCase name="fetchCharacters should fetch characters sorted by modified in asc order" duration="0"/>
-    <testCase name="fetchCharacters should fetch characters sorted by modified in desc order" duration="3"/>
+    <testCase name="fetchCharacters should fetch characters sorted by modified in desc order" duration="0"/>
   </file>
-  <file path="C:\Users\qfillion\marvel-app5\src\components\CharacterDetail.test.jsx">
-    <testCase name="renders the character detail correctly" duration="41"/>
-    <testCase name="does not render the character thumbnail image when not provided" duration="3"/>
-    <testCase name="renders &quot;no character&quot; when character is not provided" duration="2"/>
+  <file path="C:\Users\qfillion\marvel-app5\src\components\RadarChartCompare.test.jsx">
+    <testCase name="RadarChartCompare renders without crashing" duration="55"/>
+    <testCase name="RadarChartCompare renders the correct number of Radar components" duration="18"/>
+    <testCase name="RadarChartCompare renders the correct number of PolarAngleAxis components" duration="12"/>
+    <testCase name="RadarChartCompare renders the correct number of PolarRadiusAxis components" duration="14"/>
+    <testCase name="RadarChartCompare renders the correct number of Tooltip components" duration="10"/>
+    <testCase name="RadarChartCompare renders the correct number of Legend components" duration="9"/>
   </file>
-  <file path="C:\Users\qfillion\marvel-app5\src\pages\CharactersPage.test.jsx">
-    <testCase name="CharactersPage render CharactersPage component" duration="70"/>
-  </file>
-  <file path="C:\Users\qfillion\marvel-app5\src\components\CharactersList.test.jsx">
-    <testCase name="renders an empty list when no characters are provided" duration="45"/>
-    <testCase name="renders an empty list when characters is empty" duration="5"/>
-    <testCase name="renders the correct number of list items when characters are provided" duration="24"/>
-  </file>
-  <file path="C:\Users\qfillion\marvel-app5\src\pages\CharacterDetailPage.test.jsx">
-    <testCase name="CharacterDetailPage render CharacterDetailPage component" duration="76"/>
+  <file path="C:\Users\qfillion\marvel-app5\src\pages\CompareCharactersPage.test.jsx">
+    <testCase name="CompareCharactersPage renders loading state initially" duration="85">
+      <failure message="TestingLibraryElementError: Unable to find an element with the text: Loading.... This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible."><![CDATA[TestingLibraryElementError: Unable to find an element with the text: Loading.... This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <h2>
+      Compare characters
+    </h2>
+    <p
+      style="text-align: center; width: 500px;"
+    >
+      <select
+        data-testid="select-character-1"
+      >
+        <option
+          value="0"
+        >
+          Character 1
+        </option>
+        <option
+          value="1"
+        >
+          Character 2
+        </option>
+      </select>
+        
+      with 
+      <select
+        data-testid="select-character-2"
+      >
+        <option
+          value="0"
+        >
+          Character 1
+        </option>
+        <option
+          value="1"
+        >
+          Character 2
+        </option>
+      </select>
+    </p>
+    <div
+      class="recharts-wrapper"
+      style="position: relative; cursor: default; width: 500px; height: 500px;"
+    >
+      <svg
+        class="recharts-surface"
+        cx="250"
+        cy="225"
+        height="500"
+        style="width: 100%; height: 100%;"
+        viewBox="0 0 500 500"
+        width="500"
+      >
+        <title />
+        <desc />
+        <defs>
+          <clippath
+            id="recharts1-clip"
+          >
+            <rect
+              height="490"
+              width="490"
+              x="5"
+              y="5"
+            />
+          </clippath>
+        </defs>
+        <g
+          class="recharts-polar-grid"
+        >
+          <g
+            class="recharts-polar-grid-angle"
+          >
+            <line
+              cx="250"
+              cy="225"
+              stroke="#ccc"
+              x1="250"
+              x2="250"
+              y1="225"
+              y2="75"
+            />
+            <line
+              cx="250"
+              cy="225"
+              stroke="#ccc"
+              x1="250"
+              x2="379.9038105676658"
+              y1="225"
+              y2="150"
+            />
+            <line
+              cx="250"
+              cy="225"
+              stroke="#ccc"
+              x1="250"
+              x2="379.9038105676658"
+              y1="225"
+              y2="300"
+            />
+            <line
+              cx="250"
+              cy="225"
+              stroke="#ccc"
+              x1="250"
+              x2="250"
+              y1="225"
+              y2="375"
+            />
+            <line
+              cx="250"
+              cy="225"
+              stroke="#ccc"
+              x1="250"
+              x2="120.0961894323342"
+              y1="225"
+              y2="300"
+            />
+            <line
+              cx="250"
+              cy="225"
+              stroke="#ccc"
+              x1="250"
+              x2="120.0961894323342"
+              y1="225"
+              y2="150"
+            />
+          </g>
+          <g
+            class="recharts-polar-grid-concentric"
+          >
+            <path
+              class="recharts-polar-grid-concentric-polygon"
+              cx="250"
+              cy="225"
+              d="M 250,225L 250,225L 250,225L 250,225L 250,225L 250,225Z"
+              fill="none"
+              radius="0"
+              stroke="#ccc"
+            />
+            <path
+              class="recharts-polar-grid-concentric-polygon"
+              cx="250"
+              cy="225"
+              d="M 250,180L 288.97114317029974,202.5L 288.97114317029974,247.5L 250,270L 211.02885682970026,247.5L 211.02885682970026,202.5Z"
+              fill="none"
+              radius="45"
+              stroke="#ccc"
+            />
+            <path
+              class="recharts-polar-grid-concentric-polygon"
+              cx="250"
+              cy="225"
+              d="M 250,135L 327.9422863405995,180L 327.9422863405995,270L 250,315L 172.05771365940052,270L 172.05771365940052,180Z"
+              fill="none"
+              radius="90"
+              stroke="#ccc"
+            />
+            <path
+              class="recharts-polar-grid-concentric-polygon"
+              cx="250"
+              cy="225"
+              d="M 250,75L 379.9038105676658,150L 379.9038105676658,300L 250,375L 120.0961894323342,300L 120.0961894323342,150Z"
+              fill="none"
+              radius="150"
+              stroke="#ccc"
+            />
+          </g>
+        </g>
+        <g
+          class="recharts-layer recharts-polar-angle-axis angleAxis"
+        >
+          <path
+            class="recharts-polygon angleAxis"
+            cx="250"
+            cy...
+    at Object.getElementError (C:\Users\qfillion\marvel-app5\node_modules\@testing-library\dom\dist\config.js:37:19)
+    at C:\Users\qfillion\marvel-app5\node_modules\@testing-library\dom\dist\query-helpers.js:76:38
+    at C:\Users\qfillion\marvel-app5\node_modules\@testing-library\dom\dist\query-helpers.js:52:17
+    at C:\Users\qfillion\marvel-app5\node_modules\@testing-library\dom\dist\query-helpers.js:95:19
+    at Object.getByText (C:\Users\qfillion\marvel-app5\src\pages\CompareCharactersPage.test.jsx:14:23)
+    at Promise.then.completed (C:\Users\qfillion\marvel-app5\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\qfillion\marvel-app5\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\qfillion\marvel-app5\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (C:\Users\qfillion\marvel-app5\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\qfillion\marvel-app5\node_modules\jest-circus\build\run.js:126:9)
+    at _runTestsForDescribeBlock (C:\Users\qfillion\marvel-app5\node_modules\jest-circus\build\run.js:121:9)
+    at run (C:\Users\qfillion\marvel-app5\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\qfillion\marvel-app5\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\qfillion\marvel-app5\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\qfillion\marvel-app5\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\qfillion\marvel-app5\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\qfillion\marvel-app5\node_modules\jest-runner\build\testWorker.js:106:12)]]></failure>
+    </testCase>
+    <testCase name="CompareCharactersPage renders character comparison page" duration="30">
+      <failure message="TypeError: (0 , _context.t0)(...).toBeInTheDocument is not a function"><![CDATA[TypeError: (0 , _context.t0)(...).toBeInTheDocument is not a function
+    at toBeInTheDocument (C:\Users\qfillion\marvel-app5\src\pages\CompareCharactersPage.test.jsx:19:63)
+    at call (C:\Users\qfillion\marvel-app5\src\pages\CompareCharactersPage.test.jsx:2:1)
+    at Generator.tryCatch (C:\Users\qfillion\marvel-app5\src\pages\CompareCharactersPage.test.jsx:2:1)
+    at Generator._invoke [as next] (C:\Users\qfillion\marvel-app5\src\pages\CompareCharactersPage.test.jsx:2:1)
+    at asyncGeneratorStep (C:\Users\qfillion\marvel-app5\src\pages\CompareCharactersPage.test.jsx:2:1)
+    at asyncGeneratorStep (C:\Users\qfillion\marvel-app5\src\pages\CompareCharactersPage.test.jsx:2:1)]]></failure>
+    </testCase>
+    <testCase name="CompareCharactersPage renders character options in select elements" duration="31">
+      <failure message="TypeError: expect(...).toBeInTheDocument is not a function"><![CDATA[TypeError: expect(...).toBeInTheDocument is not a function
+    at toBeInTheDocument (C:\Users\qfillion\marvel-app5\src\pages\CompareCharactersPage.test.jsx:26:25)
+    at call (C:\Users\qfillion\marvel-app5\src\pages\CompareCharactersPage.test.jsx:2:1)
+    at Generator.tryCatch (C:\Users\qfillion\marvel-app5\src\pages\CompareCharactersPage.test.jsx:2:1)
+    at Generator._invoke [as next] (C:\Users\qfillion\marvel-app5\src\pages\CompareCharactersPage.test.jsx:2:1)
+    at asyncGeneratorStep (C:\Users\qfillion\marvel-app5\src\pages\CompareCharactersPage.test.jsx:2:1)
+    at asyncGeneratorStep (C:\Users\qfillion\marvel-app5\src\pages\CompareCharactersPage.test.jsx:2:1)
+    at runNextTicks (node:internal/process/task_queues:60:5)
+    at processTimers (node:internal/timers:509:9)]]></failure>
+    </testCase>
+    <testCase name="CompareCharactersPage changes selected character in first select" duration="26"/>
+    <testCase name="CompareCharactersPage changes selected character in second select" duration="19"/>
+    <testCase name="CompareCharactersPage renders radar chart with correct data" duration="20">
+      <failure message="TypeError: (0 , _context5.t0)(...).toBeInTheDocument is not a function"><![CDATA[TypeError: (0 , _context5.t0)(...).toBeInTheDocument is not a function
+    at toBeInTheDocument (C:\Users\qfillion\marvel-app5\src\pages\CompareCharactersPage.test.jsx:48:63)
+    at call (C:\Users\qfillion\marvel-app5\src\pages\CompareCharactersPage.test.jsx:2:1)
+    at Generator.tryCatch (C:\Users\qfillion\marvel-app5\src\pages\CompareCharactersPage.test.jsx:2:1)
+    at Generator._invoke [as next] (C:\Users\qfillion\marvel-app5\src\pages\CompareCharactersPage.test.jsx:2:1)
+    at asyncGeneratorStep (C:\Users\qfillion\marvel-app5\src\pages\CompareCharactersPage.test.jsx:2:1)
+    at asyncGeneratorStep (C:\Users\qfillion\marvel-app5\src\pages\CompareCharactersPage.test.jsx:2:1)]]></failure>
+    </testCase>
   </file>
 </testExecutions>
