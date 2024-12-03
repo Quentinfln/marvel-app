@@ -4,6 +4,7 @@ import AboutPage from "./pages/AboutPage";
 import CharactersPage from "./pages/CharactersPage";
 import ContactPage from "./pages/ContactPage";
 import CharacterDetailPage from "./pages/CharacterDetailPage";
+import CompareCharactersPage from './pages/CompareCharactersPage';
 
 const routes = [
     {
@@ -20,6 +21,7 @@ const routes = [
                     return getCharacters(sort, order);
                 }
             },
+            { path: "/compare", element: <CompareCharactersPage /> },
             { path: "/about", element: <AboutPage /> },
             { path: "/contact", element: <ContactPage /> },
             {
