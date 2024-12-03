@@ -26,7 +26,7 @@ const CompareCharactersPage = () => {
     }, []);
 
     if (!characters.length || !option1 || !option2) {
-        return <div>Loading...</div>;
+        return <div>Loading</div>;
     }
 
     // Transform the characters to array of label/value objects
@@ -82,8 +82,9 @@ const CompareCharactersPage = () => {
                 </select>
             </p>
 
-            <RadarChartCompare data={data} />
-
+            <div data-testid="radar-chart">
+                <RadarChartCompare data={data} />
+            </div>
         </>
     );
 };
